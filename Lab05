@@ -1,0 +1,107 @@
+#Q1.1
+list1 = [1,2,3]
+list2 = [1.0, "Jessa", 3]
+list3 = []
+print(list1)
+print(list1)
+print(list2)
+print(list3)
+print(list3)
+
+#Q1.2
+list1 = ['M', 'na', 'i','Ke']
+list2 = ['y', 'me', 's', 'lly']
+result = []
+for pair in zip(list1, list2):
+    result.append(''.join(pair))
+
+print(result)
+
+#Q2.1
+number = [1,2,3,4,5,6,7]
+numbers = [num ** 2 for num in number]
+
+print('numbers =', numbers)
+
+#Q2.2
+list1 = ['Hello', 'Take']
+list2 = ['Dear', 'Sir']
+list3 = []
+for i in list1:
+    for j in list2:
+        list3.append( i +' '+ j)
+
+print(list3)
+
+#Q3.1
+dict1 = {'Ten' : 10 , 'Twenty' : 20 , 'Thirty' : 30}
+dict2 = {'Thirty' : 30, 'Forty' : 40, 'Fifty' : 50}
+result = {** dict1, **dict2}
+print(result)
+
+#Q3.2
+sample = {
+    'class' : {
+        'student' : {
+            'name' : 'Mike',
+            'mark' : {
+                'physics' : 79,
+                'history' : 80
+                }
+            }
+        }
+    }
+print(sample['class']['student']['mark']['history'])
+
+#Q3.3
+employees = ['Kelly', 'Emma' ]
+defaults = {"designation" : 'developer', 'salary' : 8000}
+result = []
+for i in employees:
+    result.append( i + str(defaults))
+    
+print(result)
+#Q4.1
+tuple1 = ("Orange", [10,20,30] , [5 , 15 , 25])
+a = tuple1[1]
+b = a[1]
+print(b)
+
+#Q4.2
+tuple1 = (10,20,30,40)
+#lst = ('a', 'b', 'c', 'd')
+#print('#Your code')
+#for i in tuple1:
+#    for j in lst:
+#        print('print(', j ,') # should print ',i)
+a, b, c, d = tuple1
+print('print (a) # should be', a)
+print('print (b) # should be', b)
+print('print (c) # should be', c)
+print('print (d) # should be', d)
+
+#Q4.3
+tuple1 = (11,22)
+tuple2 = (99,88)
+tuple1, tuple2 = tuple2, tuple1
+print('tuple1 :',tuple1)
+print('tuple2 :',tuple2)
+#Q5
+def count_letters():
+    input_line = input("Enter a line: ")
+    letter_count = {}
+
+    for letter in input_line:
+        if letter.isalpha():
+            letter = letter.lower()
+            if letter in letter_count:
+                letter_count[letter] += 1
+            else:
+                letter_count[letter] = 1
+
+    with open("output.txt", "w") as f:
+        for letter, count in letter_count.items():
+            f.write(f"The letter '{letter}' appears {count} time(s).\n")
+
+count_letters()
+
